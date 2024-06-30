@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 
 def preprocess_frame(frame):
-    # Ensure the frame is in 8-bit single-channel format
+    # Ensures frame is in 8-bit single-channel format
     if len(frame.shape) == 3 and frame.shape[2] == 3:
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     else:
@@ -30,7 +30,7 @@ def detect_filled_black_circles(preprocess_frame):
         area = cv2.contourArea(contour)
         circle_area = np.pi * (radius ** 2)
         
-        # Check if the contour is roughly circular and filled with black
+        # Checks the contour is roughly circular and filled with black
         if 0.7 * circle_area < area < 1.3 * circle_area:  # Adjusted area check to be more lenient
             circles.append((center[0], center[1], radius))
     
@@ -43,7 +43,7 @@ def classify_bubbles(circles):
     
     for circle in circles:
         radius = circle[2]
-        if radius < 6:  # Example thresholds, adjust as needed
+        if radius < 6:  
             small_bubbles.append(circle)
         elif radius < 9:
             medium_bubbles.append(circle)
