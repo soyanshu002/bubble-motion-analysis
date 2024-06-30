@@ -1,0 +1,27 @@
+bubble-velocity-tracker/
+│
+├── data/
+│   ├── input/
+│   │   └── Bubble Img Edited      # Input source image frames
+│   └── output/
+│       └── output_bubbles_video.avi  # Output video
+│
+├── src/
+   └── # Image Editing
+    |       └── bubble_batch_edit.py
+    |       └── bubble_batchedit_final.py
+    |       └── bubble_cleaned_edit.py
+    |       └── bubble_circled_edit.py
+    |        
+    ├──# Image frames to Video Conversion
+    |       └── bubble_image2video.py
+    |
+    ├── #Testing & Info collection for further analysis(Bubble Size, Area, Radius) 
+    |       └── bubble_test_circle_detect.py
+    |       └── bubble_radius_detect.py
+    |       └── bubble_classification.py
+    |
+    ├── results/
+            └── bubble_integrated.py
+    
+    
